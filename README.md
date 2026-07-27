@@ -1,4 +1,4 @@
-# Secure Device Pairing & Proximity Exchange
+## Secure Device Pairing and Proximity Exchange
 
 Two devices pair once via QR code (out-of-band, MITM-resistant) to establish long-term trust,
 then automatically recognize and securely reconnect with each other whenever they're near again
@@ -8,6 +8,8 @@ Crypto core: hybrid **X25519 + ML-KEM-768** key exchange (NIST FIPS 203) combine
 **ASCON-128a** AEAD (NIST SP 800-232 lightweight crypto) for encryption. See
 `docs/SECURITY_ANALYSIS.md` for the full threat model and citations, and `plan.md` for the
 phase-by-phase build spec (see git history for how each phase landed).
+
+
 
 ## Setup
 
@@ -106,3 +108,5 @@ pytest tests/ -q
 WiFi and proximity-over-loopback tests are live (real sockets/mDNS, no mocking). BLE tests mock
 `BleakScanner`/`BlessServer` since no adapter was available in the dev sandbox -- see
 `tests/test_transport_ble.py` and `docs/SECURITY_ANALYSIS.md`.
+
+
